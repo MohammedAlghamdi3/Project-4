@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>volunteer</title>
+            <link rel='stylesheet' type='text/css' href='/static/styles/styels12.css'>
+</head>
+
+<body style="background-color : white;">
+    <div class="volunteer">
+    {{#volunteerusers}}
+    <a href="/volunteer/{{id}}" target="_top">
+    <div id="mar">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+      
+      <div class="row plan-box plan-success text-center">
+        <div class="col-md-12 section1">
+          
+          <h2>{{department}}</h2> 
+        </div>
+
+        <div class="col-md-12 section3">
+          <p>gender: {{gender}}</p>
+          <p>Age: {{age}}</p>
+          <p>Days stayed in the hospital: {{days}}</p>
+          <p>Share:&nbsp; &nbsp; <img src="http://www.stickpng.com/assets/images/580b57fcd9996e24bc43c543.png" style="width:30px;height:30px;">
+            <img src="http://icons.iconarchive.com/icons/xenatt/the-circle/256/App-Twitter-icon.png" style="width:30px;height:30px;">
+          </p>
+         
+        </div>
+        <div class="col-md-12 section4">
+          <button class="btn btn-success btn-block">more information</button>
+        </div>
+      </div>
+    </div>
+  </div>
+    </a>
+    {{/volunteerusers}}
+  </div>
+    </body>
+</html>

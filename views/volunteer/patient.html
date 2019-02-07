@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link rel='stylesheet' type='text/css' href='/static/styles/styels2.css'>
+
+    <title>Dashboard</title>
+</head>
+
+<body>
+        <div class="topnav">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <img src="https://c.top4top.net/p_11327yd9q1.png" width="195px" height="115px" alt="">
+              </div>
+<a href="admin.html" style="width:300px;height:60px;color:white;background:blue;"></a>
+
+    <div class="row">
+        <div class="col s12 m6">
+            <div class="card card larg materialize-red.lighten-4 ">
+                <div class="card-content materialize-red-text">
+                    <span class="card-title">The number of volunteer male and famele</span>
+                    <!-- <div class="" -->
+                    <canvas id="myChart" width="40" height="40"></canvas>
+                    <table class="striped centered">
+                            <thead>
+                                <tr>
+                                    <th>Gander</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                
+                            <tbody>
+                                <tr>
+                                    <td>Famale</td>
+                                    <td>
+                                        <h6 id="female"> {{female}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Male</td>
+                                    <td>
+                                        <h6 id="male"> {{male}}</h6>
+                                    </td>
+                                </tr>
+                
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6">
+            <div class="card larg materialize-red.lighten-4">
+                <div class="card-content materialize-red-text">
+                    <span class="card-title">number of volunteer in the City</span>
+                    <canvas id="circle" width="40" height="40"></canvas>
+
+
+                        <table class="striped centered">
+                                <thead>
+                                    <tr>
+                                        <th>City</th>
+                                        <th>Number</th>
+                                    </tr>
+                                </thead>
+        
+                                <tbody>
+                                    <tr>
+                                        <td>RIYADH</td>
+                                        <td>
+                                            <h6 id="riyadh"> {{Riyadh}}</h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>MAKKAH</td>
+                                        <td>
+                                            <h6 id="makkah"> {{Makkah}}</h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>DAMMAM</td>
+                                        <td>
+                                            <h6 id="Dammam"> {{Dammam}}</h6>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>MADINAH</td>
+                                        <td>
+                                            <h6 id="Medina"> {{Medina}}</h6>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+        
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        var FTA = document.getElementById("male").innerHTML;
+var FTAB = document.getElementById("female").innerHTML;
+       new Chart(document.getElementById("myChart"), {
+    type: 'bar',
+    data: {
+      labels: ["volunteer"],
+      datasets: [
+        {
+          label: "Male",
+          backgroundColor: "#3e95cd",
+          data: [FTA]
+        }, {
+          label: "Female",
+          backgroundColor: "#8e5ea2",
+          data: [FTAB]
+        }
+      ]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    suggestedMin: 0,
+                   
+                }
+            }]
+        }
+    }
+});
+        
+var riy = document.getElementById("riyadh").innerHTML;
+var mak = document.getElementById("makkah").innerHTML;
+var Dam = document.getElementById("Dammam").innerHTML;
+var med = document.getElementById("Medina").innerHTML;
+        new Chart(document.getElementById("circle"), {
+    type: 'pie',
+    data: {
+      labels: ["Riyadh", "Makkah", "Dammam", "Maddina"],
+      datasets: [{
+        label: "total",
+        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9"],
+        data: [riy,mak,Dam,med]
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+      }
+    }
+});
+        </script>
+</body>
+
+</html>

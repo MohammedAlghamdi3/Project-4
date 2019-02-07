@@ -1,0 +1,57 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Form</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <link rel='stylesheet' type='text/css' href='/static/styles/styels11.css'>
+</head>
+
+<body>
+
+  <a href="/volunteer/patient">To dashboard</a>
+  <form action="/volunteer/patient" method="POST">
+
+    <h1>Admin</h1>
+
+    <fieldset>
+      <legend><span class="number">1</span>Your basic info</legend>
+      <label for="name">Patient name:</label>
+      <input type="text" id="name" name="user_name">
+
+      <label>Age:</label>
+      <input type="radio" id="under_13" value="Child" name="user_age"><label for="under_13" class="light">Child</label><br>
+      <input type="radio" id="over_13" value="Young" name="user_age"><label for="over_13" class="light">Young</label><br>
+      <input type="radio" id="over_14" value="Middle" name="user_age"><label for="over_14" class="light">middle age</label><br>
+      <label>Gender:</label>
+      <input type="radio" name="gender" value="male"> Male
+      <input type="radio" name="gender" value="female"> Female
+      <br>
+      <br>
+      
+      Number of days stayed in the hospital: <input type="number" name="quantity" min="1" max="100">
+    </fieldset>
+    <fieldset>
+      <label for="Department">Department of :</label>
+      <select id="Department" name="Department">
+        <option value="Critical care">Critical care</option>
+        <option value="Gastroenterology">Gastroenterology</option>
+        <option value="Haematology">Haematology </option>
+        <option value="Nephrology"> Nephrology</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Oncology">Oncology</option>
+        <option value="Rheumatology">Rheumatology</option>
+        <option value="Urology">Urology</option>
+      </select>
+      <label for="name">room number:</label>
+      <input type="text" id="room number" name="room_number">
+
+
+
+    </fieldset>
+    <button type="submit">ADD</button>
+  </form>
+
+</body>
+
+</html>

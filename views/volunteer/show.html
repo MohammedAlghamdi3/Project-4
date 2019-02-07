@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core-compat.js"></script><!-- jQuery Library-->
+    <link rel='stylesheet' type='text/css' href='/static/styles/styels17.css'>
+
+    <title>volunteer</title>
+</head>
+
+<body>
+
+    <div class="topnav">
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <img src="https://c.top4top.net/p_11327yd9q1.png" width="195px" height="115px" alt="">
+    </div>
+    <div class="form-style-10">
+        <h1> {{name}} </h1>
+        <div class="section">Patient Data</div>
+        <div class="inner-wrap">
+            <label>Patient Name : {{name}}</label>
+            <label>gender : {{gender}}</label>
+            <label>Age : {{age}}</label>
+            <label>Number of days stayed in the hospital : {{days}}</label>
+            <label>Room Number : {{room}}</label>
+            <form action="/volunteer/card" method="POST" id="myform">
+                <label>Date_of_visit : <input type="date" name="date"></label>
+                <label id="hideit">the patient id : <input type="number" name="id" value="{{id}}"></label>
+                <label id="hideit2">the volunteer id : <input type="number" name="id2" id="volunteer" value=""></label>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3625.5958754277895!2d46.679232685000876!3d24.672034984143227!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f0366e559821f%3A0xa86dadfe8de5d6de!2z2YXYs9iq2LTZgdmJINin2YTYqtiu2LXYtdmK!5e0!3m2!1sar!2suk!4v1549458720868"
+                    width="400" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+        <div class="button-section">
+            <input type="submit" name="Sign Up" onclick="full()" />
+
+        </div>
+        </form>
+    </div>
+    <script>
+        window.onload = document.getElementById("volunteer").value = localStorage.getItem("storageName");
+        function full() {
+            document.getElementById("myform").action = "/volunteer/card/" + document.getElementById("volunteer").value;
+        }
+
+    </script>
+</body>
+
+</html>
